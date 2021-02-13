@@ -43,9 +43,18 @@ def index():
     # TODO: Below is an example - modify to extract data for your own visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
+    #Category counts and Category Labels
+    cc =df.drop(['id','message','original','genre'], axis=1).sum()
+    cc=cc.sort_values(ascending=False)
+    cats= list(cc.index)
+    # 
+    aid_related =df[df['aid_related']==1].groupby('genre').count()['aid_related']
+    earthquake =df[df['earthquake']==1].groupby('genre').count()['earthquake']
+    floods=df[df['floods']==1].groupby('genre').count()['floods']
+    
     
     # create visuals
-    # TODO: Below is an example - modify to create your own visuals
+    
     graphs = [
         {
             'data': [
@@ -64,8 +73,75 @@ def index():
                     'title': "Genre"
                 }
             }
-        }
-    ]
+        },
+        
+        # bar graph of category distribution
+        {
+            'data': [
+                Bar(
+                    x=cats,
+                    y=cc,               
+                    marker=dict(color='rgba(194, 7, 106, 0.83)',
+                    line=dict(color='rgba(74, 97, 156, 1.0)')
+                    )
+                   )
+            ],
+            'layout': {
+                'title': 'Count of messages in each Category',
+                'yaxis': {
+                    'title': "Count of messages",
+                    #'dtick':10,
+                    'showexponent' :'last',
+                    'exponentformat': 'e'
+                },
+                'xaxis': {
+                    'title': "Category",
+                    'tickangle': 45,
+                    
+                }
+            }
+        },
+        
+     # Barcharts of disaster and aid related tweets  
+      {
+            'data': [
+                Bar(
+                    x = genre_names,
+                    y = genre_counts,
+                    name='Total'
+                    ),
+                Bar(
+                    x=genre_names,
+                    y=aid_related,
+                    text=aid_related,
+                    textposition='auto',
+                    name= 'Aid Related' 
+                    
+                    ),
+                Bar(
+                    x=genre_names,
+                    y=earthquake,
+                    text=earthquake,
+                    textposition='auto',
+                    name= 'Earthquake'
+                    ),
+                Bar(
+                    x=genre_names,
+                    y=floods,
+                    text=floods,
+                    textposition='auto',
+                    name= 'Floods'
+                    )],
+                'layout': {
+                'title': 'Tweets related to Aid, Earthquake and Floods',
+                'yaxis': {
+                    'title': "Count of tweets"                   
+                    },
+                'xaxis': {
+                          'title': "Category",                                           
+                         }
+                },        
+      } ]
     
     # encode plotly graphs in JSON
     ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
