@@ -30,8 +30,8 @@ def clean_data(df):
         #categories[column] = categories[column].apply(lambda x: re.sub(column, "", x))
         categories_df[column] = categories_df[column].apply(lambda x: re.sub("[^0-9]", "", x))
 
-    # convert column from string to numeric
-    categories_df[column] = np.abs(pd.to_numeric(categories_df[column]))
+        # convert column from string to numeric
+        categories_df[column] = np.abs(pd.to_numeric(categories_df[column]))
     
     # drop the original categories column from `df`
     df.drop(columns='categories', inplace=True)
@@ -45,6 +45,10 @@ def clean_data(df):
     
     # drop duplicates
     df.drop_duplicates(keep="first", inplace=True)
+    
+    #drop 188 rows with 'related' category response '2'  : 2=not disaster related , which means 1=disaster related, zero presumably = missing
+    df = df[df['related'] != 2]
+    
     return df
     
     
