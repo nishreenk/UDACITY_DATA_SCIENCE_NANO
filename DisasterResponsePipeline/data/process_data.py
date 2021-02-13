@@ -1,4 +1,4 @@
-# import libraries
+# Import Python and required libraries 
 import sys
 import pandas as pd
 import numpy as np
@@ -7,13 +7,19 @@ import sqlalchemy
 from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
+    ''' Load messages.csv into a dataframe and inspect the first few lines.
+        Load categories.csv into a dataframe and inspect the first few lines.
+    '''
     messages = pd.read_csv(messages_filepath)
     categories = pd.read_csv(categories_filepath)
     df = messages.merge(categories, on='id')
     return df
 
 def clean_data(df):
-    # create a dataframe of the 36 individual category columns
+    '''Clean the data, separate categories columns, remove duplicates, 
+        modify the dataframe to add the 36 individual category columns,
+        drop responses labeled as'2'. They are only 188 of them.'''
+    
     categories_df = df['categories'].str.split(';', expand=True)
     #categories =  categories.categories.str.split(';', expand=True)
     # select the first row of the categories dataframe
@@ -53,7 +59,8 @@ def clean_data(df):
     
     
 def save_data(df, database_filename):
-
+    '''Save the dataframe in a sqlite database'''
+    
     engine = create_engine('sqlite:///{}'.format(database_filename))
     df.to_sql(database_filename, engine, index=False, if_exists='replace') 
 
