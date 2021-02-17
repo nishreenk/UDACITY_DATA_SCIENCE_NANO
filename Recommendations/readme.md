@@ -9,7 +9,7 @@ This folder includes files for the Recommendations with IBM Watson Studio
   II. article_community.csv
   
 
-**Recommnendations_with_IBM.ipynb **
+**Recommnendations_with_IBM.ipynb**
 
 I. Exploratory Data Analysis
 
