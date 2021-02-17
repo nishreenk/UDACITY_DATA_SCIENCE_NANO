@@ -1,10 +1,13 @@
 This folder includes files for the Recommendations with IBM Watson Studio
 
 **Table of Contents**
-- data
- --user-item-interactions.csv
+
+**data**
+
+  I. user-item-interactions.csv
  
- --article_community.csv
+  II. article_community.csv
+  
 
 **Recommnendations_with_IBM.ipynb **
 
