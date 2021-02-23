@@ -1,4 +1,4 @@
-#Thera Bank Personal Loan Campaign
+**Therabank Personal Loan Marketign Campaign**
 
 **Data Description:**
 
@@ -7,7 +7,9 @@ _Bank_Personal_Loan_Modelling.csv_ is the dataset filename.
 The dataset contains data on 5000 customers. The data include customer demographic information (age, income, etc.), the customer's relationship with the bank (mortgage, securities account, etc.), and the customer response to the last personal loan campaign (Personal Loan). Among these 5000 customers, only 480 (= 9.6%) accepted the personal loan that was offered to them in the earlier campaign.
 
 **Domain:**
+
 Banking
+
 
 **Context:**
 
@@ -69,5 +71,5 @@ Show all the metrics related for evaluating the model performance. The best perf
 
  - Fine tune model parameters of Logistic Regression model chosen 
   
- **How does the Model Predict for the Marketig campaign** 
+ **How does the Model Predict for the Marketing campaign** 
  The bank wants to give loan to the people who are eligible for the Personal loan. i.e. People who are eligible (1) should not be predicted incorrectly(0) else the marketing team will lose money. The model is optimized for a smaller number of False Positives. If the number of False positives is high the marketing department will lose money targeting the wrong customers. The final testing score is 0.965 implying that our model can predict about 96.5% of the predictions correctly.
