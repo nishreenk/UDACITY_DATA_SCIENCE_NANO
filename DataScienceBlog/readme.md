@@ -1,4 +1,4 @@
-**Therabank Personal Loan Marketign Campaign**
+**Therabank Personal Loan Marketing Campaign**
 
 **Data Description:**
 
