@@ -73,3 +73,9 @@ Show all the metrics related for evaluating the model performance. The best perf
   
  **How does the Model Predict for the Marketing campaign** 
  The bank wants to give loan to the people who are eligible for the Personal loan. i.e. People who are eligible (1) should not be predicted incorrectly(0) else the marketing team will lose money. The model is optimized for a smaller number of False Positives. If the number of False positives is high the marketing department will lose money targeting the wrong customers. The final testing score is 0.965 implying that our model can predict about 96.5% of the predictions correctly.
+ 
+ **Acknowledgemet**
+ 
+ UT Austin, Austin, Texas 
+ 
+ Great Learning, AIML PGP
