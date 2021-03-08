@@ -1,5 +1,5 @@
 **Data Source:**
-Webscraped  Websites for Texts related to Nature Based Solution adaptation for CLimate Change. 
+Webscraped  Websites for Texts using a python script developed elsewhere, related to Nature Based Solution adaptation for Climate Change. 
 
 
 **Why Topic Modeling?** 
