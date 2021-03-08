@@ -22,4 +22,3 @@ Recommending articles to users based on collaborative and content filtering.
 
 Used LDA Topic Models to extract Topics related to Nature Based Solutions addressing Climate Change. The data was extracted from several websites who are involved in NBS adaptation. Decription of all the text documents was used to derive Topics of dicussion under NbS using LDA Topic Models.
 
-https://github.com/nishreenk/MLProjects/tree/main/LDA_Topic_Model
