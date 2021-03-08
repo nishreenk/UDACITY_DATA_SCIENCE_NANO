@@ -18,7 +18,7 @@ The project includes a web app where an emergency worker can input a new message
 Recommending articles to users based on collaborative and content filtering.
 
 
-**CAPSTONE PROJECT_Topic Modeling using LDA is in the folder MLProjects_**
+**CAPSTONE PROJECT Topic Modeling using LDA for Nature Based Soutions is in the folder Capstone**
 
 Used LDA Topic Models to extract Topics related to Nature Based Solutions addressing Climate Change. The data was extracted from several websites who are involved in NBS adaptation. Decription of all the text documents was used to derive Topics of dicussion under NbS using LDA Topic Models.
 
